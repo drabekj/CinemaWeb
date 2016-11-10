@@ -38,7 +38,7 @@ body {
     text-align: center;
 }
 
-ul.products li {
+ul#products li {
     display: inline-block;
     vertical-align: top;
     text-align: left;

@@ -6,19 +6,22 @@
         <title>Movies on right now</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" type="text/css" href="movie_offer_styles.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src='sortScript.js' type='text/javascript'></script>
     </head>
     <body>
         <h1>Movie offer</h1>
         <div id="movie_offer_wrapper">
             <div id="filter_bar">
                 <ul>
-                  <button type="button"><li>Name</li></button>
-                  <button type="button"><li>Price</li></button>
-                  <button type="button"><li>Filter3</li></button>
-                  <button type="button"><li>Filter4</li></button>
+                  <button onclick='sortTable("name");'><li>Name</li></button>
+                  <button onclick='sortTable("price");'><li>Price</li></button>
+                  <button onclick='sortTable("duration");'><li>Duration</li></button>
+                  <button onclick='sortTable("category");'><li>Category</li></button>
                 </ul>
             </div>
-            <ul class="products">
+            <ul id="products">
+                <input type='hidden' id='sort' value='asc'>
                 <?php
                     $query = "SELECT * FROM Movie";
                     $post_arr = array();
@@ -32,7 +35,7 @@
                         $category =    $row['category'];
                         $description = $row['description'];
                 ?>
-                        <li>
+                        <li class="li_product_box">
                             <div class='product_box'>
                                 <img src="img/<?php echo $image; ?>">
                                 <h2><?php echo $name; ?></h2>
