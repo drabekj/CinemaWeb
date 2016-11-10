@@ -1,0 +1,26 @@
+body {
+    background-color: #DDD;
+}
+
+#wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+ul.products li {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.product_box {
+    margin: 0.1em;
+    width: 250px;
+    height: 400px;
+    background-color: #666;
+}
+
+.wordWrap {
+    word-wrap: break-word;      /* IE 5.5-7 */
+    white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+    white-space: pre-wrap;      /* current browsers */
+}
