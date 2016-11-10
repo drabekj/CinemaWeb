@@ -23,8 +23,15 @@
     </head>
     <body>
         <h1>Movie offer</h1>
-        <div id="wrapper">
-            <div
+        <div id="movie_offer_wrapper">
+            <div id="filter_bar">
+                <ul>
+                  <button type="button"><li>Name</li></button>
+                  <button type="button"><li>Price</li></button>
+                  <button type="button"><li>Filter3</li></button>
+                  <button type="button"><li>Filter4</li></button>
+                </ul>
+            </div>
             <ul class="products">
                 <?php
                     while ($row = $post_arr->fetch_assoc()) {

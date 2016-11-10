@@ -2,12 +2,39 @@ body {
     background-color: #DDD;
 }
 
-#wrapper {
+#movie_offer_wrapper {
     width: 90%;
     margin: 0 auto;
 }
 
-#wrapper ul {
+/* Movie offer Filter Bar */
+#filter_bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#filter_bar button {
+    float: left;
+    border: none;
+    display:table-cell;
+
+    width: 25%;
+    padding: 8px;
+    background-color: #333;
+    color: white;
+    font-weight: 200;
+    text-align: center;
+}
+
+#filter_bar button:hover {
+    background-color: #111;
+}
+
+/* Movie offer Content */
+#movie_offer_wrapper ul {
     text-align: center;
 }
 
