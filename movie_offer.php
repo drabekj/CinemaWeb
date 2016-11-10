@@ -11,7 +11,6 @@
     </head>
     <body>
         <script src="scripts/clickEnter.js"></script>
-        <h1>Movie offer</h1>
         <div id="movie_offer_wrapper">
             <div id="filter_bar">
                 <ul>
