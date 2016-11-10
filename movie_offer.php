@@ -1,19 +1,5 @@
 <?php
-    // $server = "mysql.comp.polyu.edu.hk/16019015x";
-    $server = "mysql.comp.polyu.edu.hk";
-    $user = "16019015x";
-    $password = "xwpksecu";
-    $database="16019015x"; //sameasaccount
-
-    $db = new mysqli($server, $user, $password, $database);
-    if($db->connect_errno > 0) {
-        die('Unable to connect to database [' . $db->connect_error . ']');
-    }
-
-
-    $query = "SELECT * FROM Movie";
-    $post_arr = array();
-    $post_arr = $db->query($query);
+    include "configDB.php";
 ?>
 <html>
     <head>
@@ -34,21 +20,31 @@
             </div>
             <ul class="products">
                 <?php
-                    while ($row = $post_arr->fetch_assoc()) {
-                        echo "<li><div class='product_box'>";
-                            echo "<img src='img/" . $row["img"] . "'>";
-                            echo "<h2>" . $row["name"] . "</h2>";
-                            echo "<div class='movie_summ_box'><div class='movie_summ_content'>"
-                                    . $row["price"] . " \$HKD" . "<span class='movie_category'>("
-                                    . $row["category"] . ")</span><br>"
-                                    . $row["duration"] . " min"
-                                . "</div></div>";
-                            echo "<div class='movie_desc'><p>"
-                                    . $row["description"]
-                                . "</div</p>";
-                        echo "</div></li>";
-                    }
+                    $query = "SELECT * FROM Movie";
+                    $post_arr = array();
+                    $post_arr = $db->query($query);
 
+                    while ($row = $post_arr->fetch_assoc()) {
+                        $image =       $row['img'];
+                        $name =        $row['name'];
+                        $price =       $row['price'];
+                        $duration =    $row['duration'];
+                        $category =    $row['category'];
+                        $description = $row['description'];
+                ?>
+                        <li>
+                            <div class='product_box'>
+                                <img src="img/<?php echo $image; ?>">
+                                <h2><?php echo $name; ?></h2>
+                                <div class='movie_summ_box'><div class='movie_summ_content'>
+                                    <?php echo $price; ?> $HKD
+                                    <span class='movie_category'>(<?php echo $category; ?>)</span><br>
+                                    <?php echo $duration; ?> min
+                                </div></div>
+                                <div class='movie_desc'><p><?php echo $description ?></p></div>
+                        </li>
+                <?php
+                    }
                 ?>
             </ul>
         </div>
