@@ -4,13 +4,13 @@
 <html>
     <head>
         <title>Movies on right now</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" type="text/css" href="movie_offer_styles.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/movie_offer_styles.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-        <script src='sortScript.js' type='text/javascript'></script>
+        <script src='scripts/sortScript.js' type='text/javascript'></script>
     </head>
     <body>
-        <script src="clickEnter.js"></script>
+        <script src="scripts/clickEnter.js"></script>
         <h1>Movie offer</h1>
         <div id="movie_offer_wrapper">
             <div id="filter_bar">

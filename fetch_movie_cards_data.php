@@ -6,16 +6,12 @@
     $filterQuery = $_POST['searchQuery'];
     $sort = $_POST['sort'];
 
-    if ($filterQuery == "") {
-        // $select_query = "SELECT * FROM Movie WHERE name LIKE '%" . $filterQuery . "%' ";
-        $filterQuery = "%";
-    }
-    $addNameFilter = "WHERE name LIKE '%" . $filterQuery . "%' ";
+    $addNameFilter = "name LIKE '%" . $filterQuery . "%' ";
     if ($colName == 'category') {
-        $select_query = "SELECT * FROM Movie WHERE category='" . $catName . "' AND" . $addNameFilter;
+        $select_query = "SELECT * FROM Movie WHERE category='" . $catName . "' AND " . $addNameFilter;
     }
     else {
-        $select_query = "SELECT * FROM Movie " . $addNameFilter . " order by " . $colName . " " . $sort;
+        $select_query = "SELECT * FROM Movie WHERE " . $addNameFilter . " order by " . $colName . " " . $sort;
     }
     file_put_contents('php://stderr', print_r($select_query, TRUE));
 
