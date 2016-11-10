@@ -7,20 +7,52 @@ body {
     margin: 0 auto;
 }
 
+#wrapper ul {
+    text-align: center;
+}
+
 ul.products li {
     display: inline-block;
     vertical-align: top;
+    text-align: left;
 }
 
 .product_box {
     margin: 0.1em;
     width: 250px;
     height: 400px;
-    background-color: #666;
+    background-color: #888;
 }
 
-.wordWrap {
-    word-wrap: break-word;      /* IE 5.5-7 */
-    white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
-    white-space: pre-wrap;      /* current browsers */
+.product_box h2 {
+    padding: 0.2em 0;
+    font-weight: 500;
+    text-align: center;
+}
+
+.product_box .movie_summ_box {
+    background-color: #999;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    font-size: 60%;
+    font-weight: 100;
+}
+
+.product_box .movie_summ_content {
+    width: 80%;
+    margin: auto;
+    margin-top: 0.4em;
+    margin-bottom: 0.3em;
+}
+
+.product_box .movie_category {
+    float: right;
+}
+
+.product_box .movie_desc {
+    padding: 0.3em;
+    padding-bottom: 0;
+    font-size: 90%;
+    overflow:hidden;
+    text-overflow: ellipsis;
 }
