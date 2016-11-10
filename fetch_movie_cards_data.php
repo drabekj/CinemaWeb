@@ -31,9 +31,9 @@
                 <img src=\"img/" . $image . "\">
                 <h2>" . $name . "</h2>
                 <div class='movie_summ_box'><div class='movie_summ_content'>"
-                    . $price . "\$HKD
+                    . $price . " \$HKD
                     <span class='movie_category'>(" . $category . ")</span><br>"
-                    . $duration . "min
+                    . $duration . " min
                 </div></div>
                 <div class='movie_desc'><p>" . $description . "</p></div>
         </li>";
