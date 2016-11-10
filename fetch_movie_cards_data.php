@@ -1,10 +1,17 @@
 <?php
     include "configDB.php";
-    
+
     $colName = $_POST['columnName'];
+    $catName = $_POST['categoryName'];
     $sort = $_POST['sort'];
 
-    $select_query = "SELECT * FROM Movie order by " . $colName . " " . $sort . " ";
+    if ($colName != 'category') {
+        $select_query = "SELECT * FROM Movie order by " . $colName . " " . $sort . " ";
+    }
+    else {
+        $select_query = "SELECT * FROM Movie WHERE category='" . $catName . "' ";
+    }
+
     $result = array();
     $result = $db->query($select_query);
 

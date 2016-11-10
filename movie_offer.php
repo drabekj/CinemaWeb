@@ -14,10 +14,16 @@
         <div id="movie_offer_wrapper">
             <div id="filter_bar">
                 <ul>
-                  <button onclick='sortTable("name");'><li>Name</li></button>
-                  <button onclick='sortTable("price");'><li>Price</li></button>
-                  <button onclick='sortTable("duration");'><li>Duration</li></button>
-                  <button onclick='sortTable("category");'><li>Category</li></button>
+                  <li onclick='sortTable("name", "");'>Name</li>
+                  <li onclick='sortTable("price", "");'>Price</li>
+                  <li onclick='sortTable("duration", "");'>Duration</li>
+                  <li class="dropdown">Category
+                    <div class="dropdown-content">
+                      <a onclick='sortTable("category", "action");'>Action</a>
+                      <a onclick='sortTable("category", "comedy");'>Comedy</a>
+                      <a onclick='sortTable("category", "documentary");'>Documentary</a>
+                    </div>
+                  </li>
                 </ul>
             </div>
             <ul id="products">

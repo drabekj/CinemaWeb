@@ -16,21 +16,48 @@ body {
     background-color: #333;
 }
 
-#filter_bar button {
+#filter_bar li {
     float: left;
     border: none;
-    display:table-cell;
+    display: table-cell;
 
     width: 25%;
-    padding: 8px;
+    padding: 8px 0;
     background-color: #333;
     color: white;
     font-weight: 200;
     text-align: center;
 }
 
-#filter_bar button:hover {
-    background-color: #111;
+#filter_bar li:hover, #filter_bar a:hover{
+    background-color: #212121;
+    color: white;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #DDD;
+    min-width: 15em;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: inline-block;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    margin-top: 8px;
+    display: block;
 }
 
 /* Movie offer Content */
