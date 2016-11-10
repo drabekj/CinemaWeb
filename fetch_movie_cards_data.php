@@ -3,14 +3,21 @@
 
     $colName = $_POST['columnName'];
     $catName = $_POST['categoryName'];
+    $filterQuery = $_POST['searchQuery'];
     $sort = $_POST['sort'];
 
-    if ($colName != 'category') {
-        $select_query = "SELECT * FROM Movie order by " . $colName . " " . $sort . " ";
+    if ($filterQuery == "") {
+        // $select_query = "SELECT * FROM Movie WHERE name LIKE '%" . $filterQuery . "%' ";
+        $filterQuery = "%";
+    }
+    $addNameFilter = "WHERE name LIKE '%" . $filterQuery . "%' ";
+    if ($colName == 'category') {
+        $select_query = "SELECT * FROM Movie WHERE category='" . $catName . "' AND" . $addNameFilter;
     }
     else {
-        $select_query = "SELECT * FROM Movie WHERE category='" . $catName . "' ";
+        $select_query = "SELECT * FROM Movie " . $addNameFilter . " order by " . $colName . " " . $sort;
     }
+    file_put_contents('php://stderr', print_r($select_query, TRUE));
 
     $result = array();
     $result = $db->query($select_query);

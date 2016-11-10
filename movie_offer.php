@@ -10,6 +10,7 @@
         <script src='sortScript.js' type='text/javascript'></script>
     </head>
     <body>
+        <script src="clickEnter.js"></script>
         <h1>Movie offer</h1>
         <div id="movie_offer_wrapper">
             <div id="filter_bar">
@@ -23,6 +24,24 @@
                       <a onclick='sortTable("category", "comedy");'>Comedy</a>
                       <a onclick='sortTable("category", "documentary");'>Documentary</a>
                     </div>
+                  </li>
+                  <li>
+                          <input type="text" id="filter_search" list="movies" placeholder="Search" name="filter_search">
+                          <datalist id="movies">
+                            <?php
+                            // whisper movie names hint
+                                $select_query = "SELECT name FROM Movie";
+                                $result = array();
+                                $result = $db->query($select_query);
+
+                                $namesArray = array();
+                                while($row = $result->fetch_assoc()){
+                                    echo "<option value='" . $row['name'] . "'>";
+                                }
+                            ?>
+                          </datalist>
+                          <!-- <input id="search_btn" type="button" onclick='sortTable("name", "");'>S</input> -->
+                          <a id="search_btn" onclick='sortTable("name", "");'><img src="icon/search_icon.png" style="width:15px;height:15px;"></a>
                   </li>
                 </ul>
             </div>
