@@ -1,0 +1,27 @@
+#detail_wrapper {
+    width: 60%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.product_box {
+    float: left;
+    margin: 0 !important;
+}
+
+.product_details {
+    background-color: #999;
+    height: 400px;
+}
+
+#screening_details ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+#screening_details ul li {
+    width: 100%;
+    background-color: #555;
+    margin-top: 1px;
+    padding: 0.4em 0;
+}

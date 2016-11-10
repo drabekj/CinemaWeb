@@ -5,7 +5,7 @@
     <head>
         <title>Movies on right now</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/movie_offer_styles.css">
+        <link rel="stylesheet" type="text/css" href="css/movie_offer_style.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
         <script src='scripts/sortScript.js' type='text/javascript'></script>
     </head>
@@ -52,6 +52,7 @@
                     $post_arr = $db->query($query);
 
                     while ($row = $post_arr->fetch_assoc()) {
+                        $id =          $row['id'];
                         $image =       $row['img'];
                         $name =        $row['name'];
                         $price =       $row['price'];
@@ -60,6 +61,7 @@
                         $description = $row['description'];
                 ?>
                         <li class="li_product_box">
+                            <a href="movie_detail.php?id=<?php echo $id; ?>">
                             <div class='product_box'>
                                 <img src="img/<?php echo $image; ?>">
                                 <h2><?php echo $name; ?></h2>
@@ -69,6 +71,8 @@
                                     <?php echo $duration; ?> min
                                 </div></div>
                                 <div class='movie_desc'><p><?php echo $description ?></p></div>
+                            </div>
+                            </a>
                         </li>
                 <?php
                     }

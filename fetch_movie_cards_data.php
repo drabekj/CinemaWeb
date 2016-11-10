@@ -13,7 +13,7 @@
     else {
         $select_query = "SELECT * FROM Movie WHERE " . $addNameFilter . " order by " . $colName . " " . $sort;
     }
-    file_put_contents('php://stderr', print_r($select_query, TRUE));
+    // file_put_contents('php://stderr', print_r($select_query, TRUE));
 
     $result = array();
     $result = $db->query($select_query);
