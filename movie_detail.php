@@ -42,7 +42,8 @@
                     <?php
                         // screeing data
                         $select_query = "SELECT * FROM Movie
-                                        INNER JOIN Screening ON Movie.id=Screening.movie_id";
+                                        INNER JOIN Screening ON Movie.id=Screening.movie_id
+                                        WHERE Movie.id=$id";
                         unset($result);
                         $result = array();
                         $result = $db->query($select_query);
