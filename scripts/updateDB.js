@@ -16,7 +16,7 @@ function saveSeats(session){
            url: "saveSeatsDB.php",
            data:{screening_id:screening_id,seat_array:seat_array},
            success: function(data){
-
+                alert("Seats sold!");
            }
     });
     // $.ajax({
