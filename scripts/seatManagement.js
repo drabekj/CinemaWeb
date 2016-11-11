@@ -61,10 +61,37 @@ function bookSeats() {
 
     // count selected seats
     var countSeats = countSelected();
-
-
-
     console.log("Booking " + countSelected() + " seats...");
+    console.log("Movie name: " + movie_name);
+
+    // redirect to checkout page + pass data
+    $('<form />')
+      .hide()
+      .attr({ method : "post" })
+      .attr({ action : "checkout.php"})
+      .append($('<input />')
+        .attr("type","hidden")
+        .attr({ "name" : "seat_array" })
+        .val(JSON.stringify(seat_array))
+      )
+      .append($('<input />')
+        .attr("type","hidden")
+        .attr({ "name" : "screening_id" })
+        .val(screening_id)
+      )
+      .append($('<input />')
+        .attr("type","hidden")
+        .attr({ "name" : "seatCount" })
+        .val(countSeats)
+      )
+      .append($('<input />')
+        .attr("type","hidden")
+        .attr({ "name" : "movie_name" })
+        .val(movie_name)
+      )
+      .append('<input type="submit" />')
+      .appendTo($("body"))
+      .submit();
 };
 
 // live update total price

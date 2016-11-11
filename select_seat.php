@@ -15,12 +15,12 @@
     $total_each_row_seats = 16;
 
     // get price of the ticket
-    $select_query = "SELECT price FROM Movie WHERE id=" . $movie_id;
+    $select_query = "SELECT price, name FROM Movie WHERE id=" . $movie_id;
     $result = array();
     $result = $db->query($select_query);
     $row = $result->fetch_assoc();
     $price = $row['price'];
-    $movie = $row['movie'];
+    $movie = $row['name'];
 
     // initialize empty array if empty
     if($row['seat_data'] === null) {
@@ -85,7 +85,7 @@
                     <p>Seat count: <span class="totalCount">0</span></p>
                 </div>
                 <div id="right_booking_details">
-                    <button onclick="return bookSeats();">Book now</button>
+                    <button onclick="return bookSeats();">Add to shopping cart</button>
                 </div>
             </div>
         </div>
@@ -94,4 +94,6 @@
 <script>
    var seat_array = <?php echo json_encode($seat_array, JSON_HEX_TAG); ?>;
    var seat_price = <?php echo json_encode($price, JSON_HEX_TAG); ?>;
+   var screening_id = <?php echo json_encode($id, JSON_HEX_TAG); ?>;
+   var movie_name = <?php echo json_encode($movie, JSON_HEX_TAG); ?>;
 </script>
