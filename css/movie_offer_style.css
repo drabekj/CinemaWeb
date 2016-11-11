@@ -29,7 +29,7 @@ body {
     text-align: center;
 }
 
-#filter_bar li:hover, #filter_bar a:hover{
+#filter_bar li:hover:not(:last-child), #filter_bar a:hover:not(:last-child){
     background-color: #212121;
     color: white;
 }
