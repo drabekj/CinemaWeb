@@ -55,12 +55,15 @@ function toggleSeat(x, y, context) {
 function bookSeats() {
     if(!validateSmartSelection()) {
         alert("Sorry, please do not create isloated seats.");
-        // seat_array[x][y] = originalState;
         return false;
     }
 
     // count selected seats
     var countSeats = countSelected();
+    if(countSeats == 0) {
+        alert("You have to select seat.");
+        return false;
+    }
     console.log("Booking " + countSelected() + " seats...");
     console.log("Movie name: " + movie_name);
 
