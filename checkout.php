@@ -26,10 +26,14 @@
 <html>
     <head>
         <title>Checkout</title>
-        <p>The selected tickets were added to the shopping card.</p>
-        <p>(stored in session)</p>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src='scripts/updateDB.js' type='text/javascript'></script>
     </head>
     <body>
-
+        <p>The selected tickets were added to the shopping card.</p>
+        <p>(stored in session)</p>
+        <button type="button" onclick='saveSeats(<?php echo json_encode($_SESSION); ?>)'>
+            UPDATE DB(will happen automatically when payed)
+        </button>
     </body>
 </html>

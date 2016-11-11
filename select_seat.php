@@ -10,6 +10,7 @@
     $id = $_GET['id'];
     $time = $row['screening_start'];
     $movie_id = $_GET['movie_id'];
+    $seat_dataRAW = $row['seat_data'];
     $seat_array = unserialize($row['seat_data']);
     $total_seat_rows = 10;
     $total_each_row_seats = 16;
@@ -23,7 +24,7 @@
     $movie = $row['name'];
 
     // initialize empty array if empty
-    if($row['seat_data'] === null) {
+    if($seat_dataRAW == null) {
         $seat_array = array();
         for($i = 0; $i < 10; $i++) {
             $seat_array[$i] = array();
@@ -31,13 +32,13 @@
                 $seat_array[$i][$j] = 0;
             }
         }
-    }
 
-    // update seat data
-    $new_seat_data = serialize($seat_array);
-    $save_query = "UPDATE Screening SET seat_data='" . $new_seat_data . "' WHERE id=" . $id;
-    if ($db->query($save_query) !== TRUE) {
-        echo "Error updating record: " . $db->error;
+        // update seat data
+        $new_seat_data = serialize($seat_array);
+        $save_query = "UPDATE Screening SET seat_data='" . $new_seat_data . "' WHERE id=" . $id;
+        if ($db->query($save_query) !== TRUE) {
+            echo "Error updating record: " . $db->error;
+        }
     }
  ?>
 <html>
