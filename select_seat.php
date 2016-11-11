@@ -45,7 +45,7 @@
         <title>Please select seat</title>
         <link rel="stylesheet" type="text/css" href="css/select_seat_style.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-        <script src='scripts/changeClassOnClick.js' type='text/javascript'></script>
+        <script src='scripts/seatManagement.js' type='text/javascript'></script>
     </head>
     <body>
         <div id="select_seat_wrapper">
@@ -57,6 +57,7 @@
                     <tr>
                         <td></td><th id="table_screen" colspan="<?php echo $total_each_row_seats; ?>">Screen</th>
                     </tr>
+                    <tr class="spacer"></tr>
                     <?php
                         for ($i=0; $i < $total_seat_rows; $i++) {
                             echo "<tr><th>" . chr(65 + $i) . "</th>";

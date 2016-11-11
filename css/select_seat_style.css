@@ -30,6 +30,10 @@ hr {
     background-color: #FDE3A7;
 }
 
+.spacer {
+    height: 5em;
+}
+
 .seat_btn {
     margin: 2px;
 }
