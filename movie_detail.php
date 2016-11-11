@@ -2,7 +2,6 @@
     include "configDB.php";
 
     $select_query = "SELECT * FROM Movie WHERE id=" . $_GET['id'];
-    file_put_contents('php://stderr', print_r($select_query, TRUE));
     $result = array();
     $result = $db->query($select_query);
 
@@ -22,7 +21,6 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/movie_detail_style.css">
         <link rel="stylesheet" type="text/css" href="css/movie_offer_style.css">
-        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
     </head>
     <body>
         <div id="detail_wrapper">

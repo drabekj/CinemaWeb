@@ -1,0 +1,35 @@
+#select_seat_wrapper  {
+    background-color: #999;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+#select_seat_wrapper p, #select_seat_wrapper h2 {
+    margin: 0;
+}
+
+#seats_table {
+    margin: auto;
+}
+
+#table_screen {
+    text-align: center;
+    background-color: yellow;
+}
+
+.seat_btn {
+    margin: 2px;
+}
+
+.seat_btn_free {
+    background-color: blue;
+}
+
+.seat_btn_occupied {
+    background-color: red;
+}
+
+.seat_btn_selected {
+    background-color: #a71;
+}
