@@ -37,6 +37,8 @@
             </div>
             <div class="product_details">
                 <div id="screening_details">
+                    <h3>Screening times</h3>
+                    <hr>
                     <ul>
                     <?php
                         // screeing data
@@ -53,7 +55,9 @@
                             $id   = $row['id'];
                      ?>
                             <li><a href="select_seat.php?id=<?php echo $id . "&movie_id=" . $movie_id; ?>">
-                                <?php echo date("d.m. (l) h:ia", strtotime($time)); ?>
+                                <button type="button">
+                                    <?php echo date("d.m. (l) h:ia", strtotime($time)); ?>
+                                </button>
                             </a></li>
                      <?php
                         }

@@ -1,5 +1,5 @@
 #detail_wrapper {
-    width: 60%;
+    width: 50%;
     margin: auto;
     margin-top: 5%;
 }
@@ -14,14 +14,38 @@
     height: 400px;
 }
 
+#screening_details h3 {
+    text-align: center;
+    padding: 0.3em 0;
+}
+
+#screening_details hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #6C7A89;
+    margin: auto;
+    padding: 0;
+    width: 60%;
+}
+
 #screening_details ul {
     list-style-type: none;
     text-align: center;
 }
 
-#screening_details ul li {
-    width: 100%;
-    background-color: #555;
+#screening_details button {
+    background-color: #C6AC7B;
+    border: none;
+    width: 60.5%;
+    padding: 15px 32px;
     margin-top: 1px;
-    padding: 0.4em 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#screening_details button:hover {
+    background-color: #7C6F55;
 }
