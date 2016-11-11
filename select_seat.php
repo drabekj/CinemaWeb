@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include "configDB.php";
 
     $select_query = "SELECT * FROM Screening WHERE id=" . $_GET['id'];
@@ -8,10 +9,18 @@
     $row = $result->fetch_assoc();
     $id = $_GET['id'];
     $time = $row['screening_start'];
-    $movie = $_GET['movie'];
+    $movie_id = $_GET['movie_id'];
     $seat_array = unserialize($row['seat_data']);
     $total_seat_rows = 10;
     $total_each_row_seats = 16;
+
+    // get price of the ticket
+    $select_query = "SELECT price FROM Movie WHERE id=" . $movie_id;
+    $result = array();
+    $result = $db->query($select_query);
+    $row = $result->fetch_assoc();
+    $price = $row['price'];
+    $movie = $row['movie'];
 
     // initialize empty array if empty
     if($row['seat_data'] === null) {
@@ -30,7 +39,6 @@
     if ($db->query($save_query) !== TRUE) {
         echo "Error updating record: " . $db->error;
     }
-
  ?>
 <html>
     <head>
@@ -43,6 +51,7 @@
         <div id="select_seat_wrapper">
             <h2>Please select seat for the movie <?php echo $movie ?></h2>
             <p><?php echo $time; ?></p>
+            <hr>
             <div id="seat_map">
                 <table id="seats_table">
                     <tr>
@@ -68,10 +77,20 @@
                     ?>
                 </table>
             </div>
-            <button>Book now</button>
+            <hr>
+            <div id="box_under_table">
+                <div id="left_booking_details">
+                    <p>Total price: <span class="totalPrice">0</span> $HKD</p>
+                    <p>Seat count: <span class="totalCount">0</span></p>
+                </div>
+                <div id="right_booking_details">
+                    <button onclick="return bookSeats();">Book now</button>
+                </div>
+            </div>
         </div>
     </body>
 </html>
 <script>
-   var seat_array = <?php echo json_encode($seat_array, JSON_HEX_TAG); ?>; //Don't forget the extra semicolon!
+   var seat_array = <?php echo json_encode($seat_array, JSON_HEX_TAG); ?>;
+   var seat_price = <?php echo json_encode($price, JSON_HEX_TAG); ?>;
 </script>

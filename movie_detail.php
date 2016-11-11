@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include "configDB.php";
 
     $select_query = "SELECT * FROM Movie WHERE id=" . $_GET['id'];
@@ -45,12 +46,13 @@
                         unset($result);
                         $result = array();
                         $result = $db->query($select_query);
+                        $movie_id = $id;
 
                         while($row = $result->fetch_assoc()) {
                             $time = $row['screening_start'];
                             $id   = $row['id'];
                      ?>
-                            <li><a href="select_seat.php?id=<?php echo $id . "&movie=" . $name; ?>">
+                            <li><a href="select_seat.php?id=<?php echo $id . "&movie_id=" . $movie_id; ?>">
                                 <?php echo date("d.m. (l) h:ia", strtotime($time)); ?>
                             </a></li>
                      <?php

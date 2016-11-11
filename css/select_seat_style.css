@@ -1,8 +1,20 @@
 #select_seat_wrapper  {
-    background-color: #999;
+    background-color: #BDC3C7;
     width: 80%;
     margin: auto;
     text-align: center;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #6C7A89;
+    margin: auto;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    padding: 0;
+    width: 60%;
 }
 
 #select_seat_wrapper p, #select_seat_wrapper h2 {
@@ -15,7 +27,7 @@
 
 #table_screen {
     text-align: center;
-    background-color: yellow;
+    background-color: #FDE3A7;
 }
 
 .seat_btn {
@@ -23,13 +35,51 @@
 }
 
 .seat_btn_free {
-    background-color: blue;
+    background-color: #446CB3;
 }
 
 .seat_btn_occupied {
-    background-color: red;
+    background-color: #E26A6A;
 }
 
 .seat_btn_selected {
     background-color: #a71;
+}
+
+#box_under_table {
+    width: 52%;
+    margin: auto;
+    margin-top: 1em;
+}
+
+#box_under_table:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+#left_booking_details {
+    width: 50%;
+    float: left;
+    text-align: left;
+    margin-bottom: 0.3em;
+}
+
+#right_booking_details {
+    width: 50%;
+    float: right;
+}
+
+#right_booking_details button {
+    padding: 0.4em;
+    margin-top: 0.1em;
+
+    background-color: #BB7746;
+    border: none;
+    color: white;
+    padding: 5px 11px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }

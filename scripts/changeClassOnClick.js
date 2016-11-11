@@ -3,22 +3,22 @@ function validateSmartSelection() {
         for(var j = 0; j < seat_array[i].length - 1; j++) {
             // creates isolated seat on the beginning
             if (j == 1 && seat_array[i][j] == 2 && seat_array[i][j-1] == 0) {
-                console.log("beginning");
+                console.log("error: isolated seat at beginning");
                 return false;
             }
             // creates isolated seat on the end
             if (j == seat_array[i].length - 2 && seat_array[i][j] == 2 && seat_array[i][j+1] == 0) {
-                console.log("end");
+                console.log("error: isolated seat at end");
                 return false;
             }
             // creates isolated seat middle from left
             if (j < seat_array[i].length - 2 && seat_array[i][j] == 2 && seat_array[i][j+1] == 0 && seat_array[i][j+2] != 0) {
-                console.log("middle left");
+                console.log("error: isolated seat at middle left");
                 return false;
             }
             // creates isolated seat middle from right
             if (j > 1 && seat_array[i][j] == 2 && seat_array[i][j-1] == 0 && seat_array[i][j-2] != 0) {
-                console.log("middle right");
+                console.log("error: isolated seat at middle right");
                 return false;
             }
         }
@@ -43,12 +43,6 @@ function toggleSeat(x, y, context) {
         seat_array[x][y] = 0;
     }
 
-    if(!validateSmartSelection()) {
-        alert("Sorry, please do not create isloated seats.");
-        seat_array[x][y] = originalState;
-        return;
-    }
-
     $(context)
     .toggleClass('seat_btn_selected')
     .toggleClass('seat_btn_free');
@@ -56,4 +50,39 @@ function toggleSeat(x, y, context) {
     // alert(seat_array.join('\n'));
 
 
+};
+
+function bookSeats() {
+    if(!validateSmartSelection()) {
+        alert("Sorry, please do not create isloated seats.");
+        // seat_array[x][y] = originalState;
+        return false;
+    }
+
+    // count selected seats
+    var countSeats = countSelected();
+
+
+
+    console.log("Booking " + countSelected() + " seats...");
+};
+
+// live update total price
+$(document).ready(function(){
+    $('.seat_btn').click(function(){
+        $(".totalPrice").text(countSelected() * seat_price);
+        $(".totalCount").text(countSelected());
+    });
+});
+
+function countSelected(){
+    var count = 0;
+    for(var i = 0; i < seat_array.length; i++) {
+        for(var j = 0; j < seat_array[i].length; j++) {
+            if (seat_array[i][j] == 2)
+                count++;
+        }
+    }
+
+    return count;
 };
