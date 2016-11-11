@@ -20,6 +20,7 @@
 
     $html = '';
     while($row = $result->fetch_assoc()){
+        $id =          $row['id'];
         $image =       $row['img'];
         $name =        $row['name'];
         $price =       $row['price'];
@@ -30,6 +31,7 @@
         // generate new html code with content
         $html .=
         "<li>
+            <a href='movie_detail.php?id=" . $id . "'>
             <div class='product_box'>
                 <img src=\"img/" . $image . "\">
                 <h2>" . $name . "</h2>
@@ -39,6 +41,8 @@
                     . $duration . " min
                 </div></div>
                 <div class='movie_desc'><p>" . $description . "</p></div>
+            </div>
+            </a>
         </li>";
     }
 
