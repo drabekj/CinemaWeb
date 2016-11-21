@@ -37,7 +37,7 @@
     $movie = $row['name'];
 
     // debug print
-    echo '<pre>' . var_export($_SESSION, true) . '</pre>';
+    // echo '<pre>' . var_export($_SESSION, true) . '</pre>';
 
     // initialize empty array if empty
     if($seat_dataRAW == null) {
@@ -65,7 +65,11 @@
         <script src='scripts/seatManagement.js' type='text/javascript'></script>
     </head>
     <body>
-        <h1>You have <?php echo count($_SESSION['orders_array']); ?> orders in your shopping cart.</h1>
+        <?php
+            if (isset($_SESSION['orders_array']) && $_SESSION['orders_array'] != '') {
+                echo "<h1>You have " . count($_SESSION['orders_array']) . " orders in your shopping cart.</h1>";
+            }
+        ?>
 
         <div id="select_seat_wrapper">
             <h2>Please select seat for the movie <?php echo $movie ?></h2>

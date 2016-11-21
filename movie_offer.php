@@ -12,8 +12,13 @@
     </head>
     <body>
         <script src="scripts/clickEnter.js"></script>
-        <h1>You have <?php echo count($_SESSION['orders_array']); ?> orders in your shopping cart.</h1>
-        
+        <!-- This is only to show you how to access the data -->
+        <?php
+            if (isset($_SESSION['orders_array']) && $_SESSION['orders_array'] != '') {
+                echo "<h1>You have " . count($_SESSION['orders_array']) . " orders in your shopping cart.</h1>";
+            }
+        ?>
+
         <div id="movie_offer_wrapper">
             <div id="filter_bar">
                 <ul>

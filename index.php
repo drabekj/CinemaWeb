@@ -8,7 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>You have <?php echo count($_SESSION['orders_array']); ?> orders in your shopping cart.</h1>
+    <!-- This is only to show you how to access the data -->
+    <?php
+        if (isset($_SESSION['orders_array']) && $_SESSION['orders_array'] != '') {
+            echo "<h1>You have " . count($_SESSION['orders_array']) . " orders in your shopping cart.</h1>";
+        }
+    ?>
 
     <a href="movie_offer.php"><button type="button"> Movie Display </button></a>
 </body>
