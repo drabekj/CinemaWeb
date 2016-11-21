@@ -1,6 +1,8 @@
 <?php
     session_start();
 
+    // store selected seats in session ready to be updated to DB upon payment
+    // stored as an array, each item in array represents 1 movie order (might contain more tickets)
     $seat_array = json_decode($_POST['seat_array']);
     $screening_id = $_POST['screening_id'];
     $seat_count = $_POST['seatCount'];

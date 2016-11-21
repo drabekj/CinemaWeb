@@ -92,6 +92,7 @@
         </div>
     </body>
 </html>
+<!-- pass data to seatManagement.js -->
 <script>
    var seat_array = <?php echo json_encode($seat_array, JSON_HEX_TAG); ?>;
    var seat_price = <?php echo json_encode($price, JSON_HEX_TAG); ?>;

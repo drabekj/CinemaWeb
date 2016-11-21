@@ -1,3 +1,8 @@
+// Ensures that selected seats do not block 1 seat:
+//      - in between
+//      - on the left side
+//      - on the right side
+// called on submit
 function validateSmartSelection() {
     for(var i = 0; i < seat_array.length; i++) {
         for(var j = 0; j < seat_array[i].length - 1; j++) {
@@ -27,6 +32,8 @@ function validateSmartSelection() {
     return true;
 };
 
+//  makes change color upon selecting seat (chenages class) and change its temporary
+//  value in local array to store this action
 function toggleSeat(x, y, context) {
     console.log("[" + x + "," + y + "]");
 
@@ -52,6 +59,8 @@ function toggleSeat(x, y, context) {
 
 };
 
+// upon submitting selected seats and proceeding with order
+//      passes the data to "checkout.php" in a hidden form via POST
 function bookSeats() {
     if(!validateSmartSelection()) {
         alert("Sorry, please do not create isloated seats.");
@@ -67,7 +76,7 @@ function bookSeats() {
     console.log("Booking " + countSelected() + " seats...");
     console.log("Movie name: " + movie_name);
 
-    // redirect to checkout page + pass data
+    // redirect to checkout page + pass data in hidden form
     $('<form />')
       .hide()
       .attr({ method : "post" })
@@ -105,6 +114,7 @@ $(document).ready(function(){
     });
 });
 
+// helper function to count currently selected seats
 function countSelected(){
     var count = 0;
     for(var i = 0; i < seat_array.length; i++) {
