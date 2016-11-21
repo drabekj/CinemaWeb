@@ -1,3 +1,5 @@
+// Saves all selected seats in session to DB.
+// Called after payment.
 function saveSeats(session){
     // replace selected by saved in array (2s by 1s)
     for(var i = 0; i < session.seat_array.length; i++) {
