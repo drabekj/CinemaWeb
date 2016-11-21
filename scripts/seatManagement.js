@@ -45,9 +45,9 @@ function toggleSeat(x, y, context) {
     // update binary array (2 stands for selected)
     var originalState = seat_array[x][y];
     if($(context).hasClass('seat_btn_free'))
-        seat_array[x][y] = 2;
+        seat_array[x][y] = '2';
     else {
-        seat_array[x][y] = 0;
+        seat_array[x][y] = '0';
     }
 
     $(context)
@@ -106,8 +106,11 @@ function bookSeats() {
       .submit();
 };
 
-// live update total price
-$(document).ready(function(){
+// live update total price, both onLoad and on seatClick
+$(document).ready(function (){
+    $(".totalPrice").text(countSelected() * seat_price);
+    $(".totalCount").text(countSelected());
+
     $('.seat_btn').click(function(){
         $(".totalPrice").text(countSelected() * seat_price);
         $(".totalCount").text(countSelected());

@@ -24,6 +24,8 @@
         <link rel="stylesheet" type="text/css" href="css/movie_offer_style.css">
     </head>
     <body>
+        <h1>You have <?php echo count($_SESSION['orders_array']); ?> orders in your shopping cart.</h1>
+        
         <div id="detail_wrapper">
             <div class="product_box">
                 <img src="img/<?php echo $image; ?>">

@@ -11,7 +11,20 @@
     $time = $row['screening_start'];
     $movie_id = $_GET['movie_id'];
     $seat_dataRAW = $row['seat_data'];
-    $seat_array = unserialize($row['seat_data']);
+    // If we have already a order for this screening in shopping cart use that array,
+    // otherwise get one from DB.
+    $exists = 0;
+    if (isset($_SESSION['orders_array']) && $_SESSION['orders_array'] != '') {
+        foreach ($_SESSION['orders_array'] as $index => $order) {
+            if($id == $order['screening_id']) {
+                $seat_array = $order['seat_array'];
+                $exists = 1;
+            }
+        }
+    }
+    if ($exists == 0) {
+        $seat_array = unserialize($row['seat_data']);
+    }
     $total_seat_rows = 10;
     $total_each_row_seats = 16;
 
@@ -22,6 +35,9 @@
     $row = $result->fetch_assoc();
     $price = $row['price'];
     $movie = $row['name'];
+
+    // debug print
+    echo '<pre>' . var_export($_SESSION, true) . '</pre>';
 
     // initialize empty array if empty
     if($seat_dataRAW == null) {
@@ -49,6 +65,8 @@
         <script src='scripts/seatManagement.js' type='text/javascript'></script>
     </head>
     <body>
+        <h1>You have <?php echo count($_SESSION['orders_array']); ?> orders in your shopping cart.</h1>
+
         <div id="select_seat_wrapper">
             <h2>Please select seat for the movie <?php echo $movie ?></h2>
             <p><?php echo $time; ?></p>
@@ -63,10 +81,15 @@
                         for ($i=0; $i < $total_seat_rows; $i++) {
                             echo "<tr><th>" . chr(65 + $i) . "</th>";
                             for ($j=0; $j < $total_each_row_seats; $j++) {
-                                if ($seat_array[$i][$j])
+                                if ($seat_array[$i][$j] == 1) {
                                     $seatStatus = "seat_btn_occupied";
-                                else
+                                }
+                                else if ($seat_array[$i][$j] == 2) {
+                                    $seatStatus = "seat_btn_selected";
+                                }
+                                else {
                                     $seatStatus = "seat_btn_free";
+                                }
 
                                 echo "<td>
                                         <button class='seat_btn " . $seatStatus . "' onclick='toggleSeat(" . $i . "," . $j . ",this)'>"

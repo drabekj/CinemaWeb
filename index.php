@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +8,8 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>You have <?php echo count($_SESSION['orders_array']); ?> orders in your shopping cart.</h1>
+
     <a href="movie_offer.php"><button type="button"> Movie Display </button></a>
 </body>
 </html>
