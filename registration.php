@@ -60,7 +60,8 @@ else {
         <div class="container">
             <input type="number" name="phonenumber" placeholder="PhoneNumber" title="Valid phone number at least 6 characters long." pattern=".{6,}" tel required/>
         </div>
-        <button type="submit" class="btn btn-primary btn-xl">Sign Up</button>
+        <button type="submit" class="btn btn-primary btn-xl">Sign Up</button><br>
+        <span id="forgot_password"><a href="forgot_password.php">Frogot password</a></span>
     </form>
 <?php
 }

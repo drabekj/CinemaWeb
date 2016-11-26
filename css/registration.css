@@ -25,6 +25,12 @@ form h1 {
     margin: 0.3em auto;
 }
 
+#forgot_password a {
+    color: rgba(240,95,64,0.7);
+    font-size: 70%;
+    margin-bottom: 1em;
+}
+
 hr {
     border-width: 1px;
     max-width: 400px;
