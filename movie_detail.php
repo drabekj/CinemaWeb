@@ -14,6 +14,8 @@
     $duration =    $row['duration'];
     $category =    $row['category'];
     $description = $row['description'];
+
+    $db->close();
  ?>
 
 <html>
