@@ -93,8 +93,8 @@
                     Continue shopping
                 </button>
             </a>
-            <a href="credit_card.php">
-                <button type="button" id="proceed_pay_btn" class="btn btn-primary btn-xl"> <!-- onclick='saveSeats(<?php echo json_encode($_SESSION); ?>)'> -->
+            <a href="card.php">
+                <button type="button" id="proceed_pay_btn" class="btn btn-primary btn-xl" >
                     Proceed to Payment
                 </button>
             </a>

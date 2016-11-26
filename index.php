@@ -55,10 +55,10 @@
                             <a class="page-scroll" href="#about">Movie Offer</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#portfolio">Log In</a>
+                            <a class="page-scroll" href="login.php">Log In</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#contact">Register</a>
+                            <a class="page-scroll" href="register.php">Register</a>
                         </li>
                     </ul>
                 </div>
