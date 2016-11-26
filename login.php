@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html>
 <style>
 form {
@@ -94,7 +95,6 @@ span.psw {
 
 </style>
 <?php
-session_start();
 function printLoginForm() {
 ?>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST"  onsubmit="return checkform(this);">
@@ -190,19 +190,22 @@ if (!isset($_POST['username']) || !isset($_POST['password'])) {
 $username = $_POST['username'];
 $password = sha1($_POST['password']);
 echo "Password: " . $password;
-$conn = mysql_connect("mysql.comp.polyu.edu.hk", "16019015x", "xwpksecu");
-mysql_selectdb("16019015x", $conn);
-$query = "select fullname from User "
-. "where username='$username' and password='$password'";
-$result = mysql_query($query, $conn);
 
-if (mysql_num_rows($result) > 0) {
-    $record = mysql_fetch_row($result);
-    $_SESSION['username'] = $username;
-    $_SESSION['fullname'] = $record[0];
+include 'configDB.php';
+$query = "SELECT * FROM User WHERE username='$username' AND password='$password'";
+$result = array();
+$result = $db->query($query);
+$row = $result->fetch_assoc();
+
+if ($result->num_rows > 0) {
+    $_SESSION['username']    = $row['username'];
+    $_SESSION['fullname']    = $row['fullname'];
+    $_SESSION['email']       = $row['email'];
+    $_SESSION['phonenumber'] = $row['phonenumber'];
+    $db->close();
     header('Location: index.php');
 } else {
     printLoginForm();
 }
-mysql_close($conn);
+$db->close();
 ?>

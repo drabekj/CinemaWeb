@@ -103,6 +103,7 @@ span.psw {
 #profile {
     width: 40%;
     margin: auto;
+    margin-top: 5em;
     color: rgba(255, 255, 255, 0.8);
 }
 

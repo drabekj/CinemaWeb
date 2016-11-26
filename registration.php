@@ -26,8 +26,10 @@ function insertRecord($username, $password, $fullname, $email, $phonenumber) {
         echo "Error updating record: " . $db->error;
     }
     else {
-        $_SESSION['username'] = $username;
-        $_SESSION['fullname'] = $fullname;
+        $_SESSION['username']    = $username;
+        $_SESSION['fullname']    = $fullname;
+        $_SESSION['email']       = $email;
+        $_SESSION['phonenumber'] = $phonenumber;
         $db->close();
         header('Location: index.php');
     }
