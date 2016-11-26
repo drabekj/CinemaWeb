@@ -7,6 +7,6 @@
 
     function clearShoppingCart() {
         unset($_SESSION['orders_array']);
-        header('Location: movie_offer.php');
+        header('Location: index.php');
         die();
     }

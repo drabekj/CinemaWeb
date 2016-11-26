@@ -71,7 +71,7 @@ $password = @$_POST['password'];
 $fullname = @$_POST['fullname'];
 $email = @$_POST['email'];
 $phonenumber = @$_POST['phonenumber'];
- 
+
 function insertRecord($username, $password, $fullname, $email, $phonenumber) {
 $conn = mysql_connect("mysql.comp.polyu.edu.hk", "16019015x", "xwpksecu");
 mysql_selectdb("16019015x", $conn);
@@ -84,10 +84,10 @@ if (mysql_error() != "") {
 echo "<input type=\"button\" "
 . " onclick=\"javascript: history.go(-1)\" value=\"Back\"/>";
 } else {
-$_SESSION['conn'] = $conn;
-$_SESSION['username'] = $username;
-$_SESSION['fullname'] = $fullname;
-echo "<h1>Registration is completed successfully</h1>";
+    $_SESSION['conn'] = $conn;
+    $_SESSION['username'] = $username;
+    $_SESSION['fullname'] = $fullname;
+    header('Location: index.php');
 }
 mysql_close($conn);
 }

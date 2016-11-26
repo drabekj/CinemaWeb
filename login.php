@@ -178,14 +178,14 @@ echo "<a href=\"logout.php\">Logout</a>";
 }
 
 if (isset($_SESSION['username'])) {
-$username = $_SESSION['username'];
-$fullname = $_SESSION['fullname'];
-printWelcomeScreen($fullname);
-die();
+    $username = $_SESSION['username'];
+    $fullname = $_SESSION['fullname'];
+    header('Location: index.php');
+    die();
 }
 if (!isset($_POST['username']) || !isset($_POST['password'])) {
-printLoginForm();
-die();
+    printLoginForm();
+    die();
 }
 $username = $_POST['username'];
 $password = $_POST['password'];
@@ -194,14 +194,14 @@ mysql_selectdb("16019015x", $conn);
 $query = "select fullname from User "
 . "where username='$username' and password='$password'";
 $result = mysql_query($query, $conn);
+
 if (mysql_num_rows($result) > 0) {
-$record = mysql_fetch_row($result);
-$_SESSION['username'] = $username;
-$_SESSION['fullname'] = $record[0];
-printWelcomeScreen($record[0]);
+    $record = mysql_fetch_row($result);
+    $_SESSION['username'] = $username;
+    $_SESSION['fullname'] = $record[0];
+    header('Location: index.php');
 } else {
-printLoginForm();
+    printLoginForm();
 }
 mysql_close($conn);
 ?>
-

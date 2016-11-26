@@ -57,12 +57,14 @@
                         <li>
                             <a class="page-scroll" href="movie_offer.php">Movie Offer</a>
                         </li>
-                        <li>
-                            <a class="page-scroll" href="login.php">Log In</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="registration.php">Register</a>
-                        </li>
+                        <?php
+                            if (isset($_SESSION['username'])) {
+                                showLogged();
+                            }
+                            else {
+                                showLoginReg();
+                            }
+                        ?>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -83,3 +85,14 @@
 
 </body>
 </html>
+<<?php
+    function showLoginReg() {
+        echo "<li><a class='page-scroll' href='login.php'>Log In</a></li>";
+        echo "<li><a class='page-scroll' href='registration.php'>Register</a></li>";
+    }
+
+    function showLogged() {
+        echo "<li><a class='page-scroll' href='edit_user.php'>" . $_SESSION['fullname'] . "</a></li>";
+        echo "<li><a class='page-scroll' href='logout.php'>Logout</a></li>";
+    }
+ ?>
