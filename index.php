@@ -19,7 +19,7 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="css/creative.min.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,7 +37,46 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body id="page-top">
-    
+
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#page-top">ABC Cinema</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="page-scroll" href="#about">Movie Offer</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#portfolio">Log In</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#contact">Register</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+        <header>
+            <div class="header-content">
+                <div class="header-content-inner">
+                    <h1 id="homeHeading">Sometimes all you need is to sit back and relax</h1>
+                    <hr>
+                    <p>ABC Cinema is equiped most advanced movie screens and sound systems, we offer 27 meters wide screen and stunning 7.1 Dolby Digital sound!</p>
+                    <a href="movie_offer.php" class="btn btn-primary btn-xl page-scroll">Book a Movie</a>
+                </div>
+            </div>
+        </header>
 
 </body>
 </html>

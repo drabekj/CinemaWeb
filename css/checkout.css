@@ -1,0 +1,25 @@
+body {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-image: url('../img/header.jpg');
+    text-align: center;
+    color: white;
+}
+
+.proceed_box {
+    width: 600px;
+    margin: 10% auto;
+    background: rgba(48, 35, 11, 0.85);
+    text-align: center;
+    padding: 1em;
+}
+
+#proceed_pay_btn {
+    margin-left: 1em;
+}

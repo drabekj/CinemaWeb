@@ -1,5 +1,14 @@
 body {
-    background-color: #DDD;
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-image: url('../img/shelf.jpg');
+  color: rgba(255, 255, 255, 0.7);;
 }
 
 #movie_offer_wrapper {
@@ -34,7 +43,7 @@ body {
     color: white;
 }
 
-li.dropdown {
+#movie_offer_wrapper li.dropdown {
     display: inline-block;
 }
 
