@@ -19,11 +19,11 @@
 <html>
     <head>
         <title><?php echo $name . " - movie detail"; ?></title>
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/creative.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/movie_detail_style.css">
         <link rel="stylesheet" type="text/css" href="css/movie_offer_style.css">
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/creative.css" rel="stylesheet">
     </head>
     <body>
         <?php

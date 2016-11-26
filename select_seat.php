@@ -60,11 +60,11 @@
 <html>
     <head>
         <title>Please select seat</title>
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/creative.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/select_seat_style.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
         <script src='scripts/seatManagement.js' type='text/javascript'></script>
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/creative.css" rel="stylesheet">
     </head>
     <body>
         <?php
@@ -145,7 +145,7 @@
                     <p>Seat count: <span class="totalCount">0</span></p>
                 </div>
                 <div id="right_booking_details">
-                    <button onclick="return bookSeats();">Add to shopping cart</button>
+                    <button onclick="return bookSeats();" class="btn btn-primary">Add to shopping cart</button>
                 </div>
             </div>
         </div>

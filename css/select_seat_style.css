@@ -27,7 +27,8 @@ hr {
     margin-top: 0.5em;
     margin-bottom: 1em;
     padding: 0;
-    width: 60%;
+    /*width: 60%;*/
+    max-width: 600px;
 }
 
 #select_seat_wrapper p, #select_seat_wrapper h2 {
@@ -87,7 +88,7 @@ hr {
     float: right;
 }
 
-#right_booking_details button {
+/*#right_booking_details button {
     padding: 0.4em;
     margin-top: 0.1em;
 
@@ -99,4 +100,4 @@ hr {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-}
+}*/

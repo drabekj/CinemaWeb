@@ -1,3 +1,7 @@
+body p {
+    font-size: 100%;
+}
+
 #detail_wrapper {
     width: 50%;
     margin: auto;
@@ -48,4 +52,8 @@
 
 #screening_details button:hover {
     background-color: #7C6F55;
+}
+
+#movie_desc {
+    position: relative;
 }
