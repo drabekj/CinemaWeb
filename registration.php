@@ -58,7 +58,7 @@ else {
             <input type="email" name="email" placeholder="Email" title="Must be a valid email address." email required/>
         </div>
         <div class="container">
-            <input type="number" name="phonenumber" placeholder="PhoneNumber"title="Valid phone number at least 6 characters long." pattern=".{6,}" tel required/>
+            <input type="number" name="phonenumber" placeholder="PhoneNumber" title="Valid phone number at least 6 characters long." pattern=".{6,}" tel required/>
         </div>
         <button type="submit" class="btn btn-primary btn-xl">Sign Up</button>
     </form>

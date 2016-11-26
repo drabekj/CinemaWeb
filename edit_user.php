@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Profile</title>
@@ -60,10 +60,10 @@ function printEditForm($name) {
 	</div>
 
 	<form id="update_form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-		<input type="text" name="fullname" placeholder="Change Fullname"/>
-		<input type="password" name="password" placeholder="Change Password" />
-		<input type="text" name="email" placeholder="Change Email"/>
-		<input type="text" name="phonenumber" placeholder="Change PhoneNumber"/>
+		<input type="text" name="fullname" placeholder="Change Fullname" title="At least 3 characters long." pattern=".{3,}"/>
+		<input type="password" name="password" placeholder="Change Password" title="At least 6 characters long." pattern=".{6,}" />
+		<input type="email" name="email" placeholder="Change Email" title="Must be a valid email address." email/>
+		<input type="number" name="phonenumber" placeholder="Change PhoneNumber" title="Valid phone number at least 6 characters long." pattern=".{6,}" tel/>
  		<button type="submit" class="btn btn-primary btn-xl" name="submit">Update</button>
 	</form>
 
