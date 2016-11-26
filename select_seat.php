@@ -67,13 +67,6 @@
         <script src='scripts/seatManagement.js' type='text/javascript'></script>
     </head>
     <body>
-        <?php
-            if (isset($_SESSION['orders_array']) && $_SESSION['orders_array'] != '') {
-                echo "<h1>You have " . count($_SESSION['orders_array']) . " orders in your shopping cart.</h1>";
-                echo "<a href='clearShoppingCart.php?clearCart=true'><button class='clearShoppingCart'>Clear shopping cart</button></a>";
-            }
-        ?>
-
         <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -93,12 +86,16 @@
                         <li>
                             <a class="page-scroll" href="movie_offer.php">Movie Offer</a>
                         </li>
-                        <li>
-                            <a class="page-scroll" href="login.php">Log In</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="registration.php">Register</a>
-                        </li>
+                        <?php
+                            include 'renderFunc.php';
+
+                            if (isset($_SESSION['username'])) {
+                                showLogged();
+                            }
+                            else {
+                                showLoginReg();
+                            }
+                        ?>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

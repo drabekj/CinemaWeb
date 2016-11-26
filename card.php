@@ -1,56 +1,23 @@
-<link rel="stylesheet" href="card.css">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<script type="text/javascript" src="scripts/card.js"></script>
-<script src='scripts/updateDB.js' type='text/javascript'></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<!-- If you're using Stripe for payments -->
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
- <style>
-/* Padding - just for asthetics on Bootsnipp.com */
-body { margin-top:20px; }
+<?php
+    session_start();
 
-/* CSS for Credit Card Payment form */
-.credit-card-box .panel-title {
-    display: inline;
-    font-weight: bold;
-}
-.credit-card-box .form-control.error {
-    border-color: red;
-    outline: 0;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,0,0,0.6);
-}
-.credit-card-box label.error {
-  font-weight: bold;
-  color: red;
-  padding: 2px 8px;
-  margin-top: 2px;
-}
-.credit-card-box .payment-errors {
-  font-weight: bold;
-  color: red;
-  padding: 2px 8px;
-  margin-top: 2px;
-}
-.credit-card-box label {
-    display: block;
-}
-/* The old "center div vertically" hack */
-.credit-card-box .display-table {
-    display: table;
-}
-.credit-card-box .display-tr {
-    display: table-row;
-}
-.credit-card-box .display-td {
-    display: table-cell;
-    vertical-align: middle;
-    width: 50%;
-}
-/* Just looks nicer */
-.credit-card-box .panel-heading img {
-    min-width: 180px;
-}
-</style>
+    if (!isset($_SESSION['username'])) {
+        header('Location: login.php');
+    }
+ ?>
+<html>
+<head>
+    <title>Payment</title>
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="scripts/card.js"></script>
+    <script src='scripts/updateDB.js' type='text/javascript'></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <!-- If you're using Stripe for payments -->
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+</head>
+<body>
+
 <div class="container">
     <div class="row">
         <!-- You can make it whatever width you want. I'm making it full width
@@ -135,3 +102,5 @@ Finish Payment        </button></a>
 
 
         </div>
+</body>
+</html>
