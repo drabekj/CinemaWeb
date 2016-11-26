@@ -172,9 +172,9 @@ return string.split(' ').join('');
 <?php
 }
 function printWelcomeScreen($name) {
-echo "<h1>Welcome, $name</h1>";
-echo "<a href=\"edit_user.php\">Edit/View Personal Information</a><br/>";
-echo "<a href=\"logout.php\">Logout</a>";
+    echo "<h1>Welcome, $name</h1>";
+    echo "<a href=\"edit_user.php\">Edit/View Personal Information</a><br/>";
+    echo "<a href=\"logout.php\">Logout</a>";
 }
 
 if (isset($_SESSION['username'])) {
@@ -188,7 +188,8 @@ if (!isset($_POST['username']) || !isset($_POST['password'])) {
     die();
 }
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = sha1($_POST['password']);
+echo "Password: " . $password;
 $conn = mysql_connect("mysql.comp.polyu.edu.hk", "16019015x", "xwpksecu");
 mysql_selectdb("16019015x", $conn);
 $query = "select fullname from User "
