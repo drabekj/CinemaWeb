@@ -45,6 +45,14 @@ p {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+
+#nav_logo {
+    width:25px;
+    height:30px;
+    margin-right: 0.4em;
+    display: inline-block;
+}
+
 .bg-primary {
   background-color: #F05F40;
 }

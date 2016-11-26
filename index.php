@@ -45,20 +45,23 @@
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand page-scroll" href="#page-top">ABC Cinema</a>
+                    <a class="navbar-brand page-scroll" href="index.php">
+                        <img id="nav_logo" src="/icon/logo_icon_small.png" />
+                        ABC Cinema
+                    </a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a class="page-scroll" href="#about">Movie Offer</a>
+                            <a class="page-scroll" href="movie_offer.php">Movie Offer</a>
                         </li>
                         <li>
                             <a class="page-scroll" href="login.php">Log In</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="register.php">Register</a>
+                            <a class="page-scroll" href="registration.php">Register</a>
                         </li>
                     </ul>
                 </div>
