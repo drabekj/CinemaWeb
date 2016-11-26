@@ -77,24 +77,43 @@ if (!isset($_SESSION['username'])) {
 }
 
 if (isset($_POST['submit'])) {
-	$username = $_SESSION['username'];
-	$password = $_POST['password'];
-	$_SESSION['fullname'] = $fullname = $_POST['fullname'];
-	$_SESSION['email'] = $email = $_POST['email'];
-	$_SESSION['phonenumber'] = $phonenumber = $_POST['phonenumber'];
+	$username 	 = $_SESSION['username'];
+	$password 	 = $_POST['password'];
+	$fullname 	 = $_POST['fullname'];
+	$email	  	 = $_POST['email'];
+	$phonenumber = $_POST['phonenumber'];
+
+	if ($_POST['fullname'] == "")
+		$fullname = $_SESSION['fullname'];
+	if ($_POST['email'] == "")
+		$email = $_SESSION['email'];
+	if ($_POST['phonenumber'] == "")
+		$phonenumber = $_SESSION['phonenumber'];
 
 	// Add your code here to complete this PHP page
 	include "configDB.php";
 
-	$update_query = sprintf("UPDATE User SET fullname = '%s', password = '%s', email = '%s', phonenumber = '%s' WHERE username = '%s'",
-	$fullname,
-	$password,
-	$email,
-	$phonenumber,
-	$username);
+	if ($_POST['password'] == "") {
+		$update_query = sprintf("UPDATE User SET fullname = '%s', email = '%s', phonenumber = '%s' WHERE username = '%s'",
+		$fullname,
+		$email,
+		$phonenumber,
+		$username);
+	}
+	else {
+		$update_query = sprintf("UPDATE User SET fullname = '%s', password = '%s', email = '%s', phonenumber = '%s' WHERE username = '%s'",
+		$fullname,
+		$password,
+		$email,
+		$phonenumber,
+		$username);
+	}
 
 	if ($db->query($update_query) === TRUE) {
-    	echo "Record updated successfully";
+		$_SESSION['fullname'] = $fullname;
+		$_SESSION['email'] = $email;
+		$_SESSION['phonenumber'] = $phonenumber;
+		header('Location: edit_user.php');
 	} else {
 	    echo "Error updating record: " . $db->error;
 	}

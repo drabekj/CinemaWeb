@@ -5,7 +5,11 @@ function showLoginReg() {
 }
 
 function showLogged() {
-    echo "<li><a class='page-scroll' href='edit_user.php'>" . $_SESSION['fullname'] . "</a></li>";
+    $name = $_SESSION['fullname'];
+    if ($_SESSION['fullname'] == "")
+        $name = $_SESSION['username'];
+
+    echo "<li><a class='page-scroll' href='edit_user.php'>" . $name . "</a></li>";
 
     if (isset($_SESSION['orders_array']) && $_SESSION['orders_array'] != '') {
         $count = count($_SESSION['orders_array']);

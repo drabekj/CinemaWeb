@@ -59,7 +59,7 @@
                         </li>
                         <?php
                             include 'renderFunc.php';
-                            
+
                             if (isset($_SESSION['username'])) {
                                 showLogged();
                             }
