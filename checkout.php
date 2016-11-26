@@ -87,7 +87,6 @@
 
         <div class="proceed_box">
             <p>The selected tickets were added to the shopping card.</p>
-            <p>(stored in session)</p>
             <a href="movie_offer.php">
                 <button type="button" id="proceed_shop_btn" class="btn btn-primary btn-xl page-scroll">
                     Continue shopping

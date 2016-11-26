@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 session_start();
 ?>
@@ -43,19 +44,19 @@ else {
         <h1>Registration</h1>
         <hr noshade>
         <div class="container">
-            <input type="text" name="username" placeholder="Username" required/>
+            <input type="text" name="username" placeholder="Username" title="At least 3 characters long." pattern=".{3,}" required/>
         </div>
         <div class="container">
-            <input type="password" name="password" placeholder="Enter Password" required/>
+            <input type="password" name="password" placeholder="Enter Password" title="At least 6 characters long." pattern=".{6,}" required/>
         </div>
         <div class="container">
-            <input type="text" name="fullname" placeholder="Fullname"required/>
+            <input type="text" name="fullname" placeholder="Fullname" title="At least 3 characters long." pattern=".{3,}" required/>
         </div>
         <div class="container">
-            <input type="text" name="email" placeholder="Email"required/>
+            <input type="email" name="email" placeholder="Email" title="Must be a valid email address." email required/>
         </div>
         <div class="container">
-            <input type="text" name="phonenumber" placeholder="PhoneNumber"required/>
+            <input type="number" name="phonenumber" placeholder="PhoneNumber"title="Valid phone number at least 6 characters long." pattern=".{6,}" tel required/>
         </div>
         <button type="submit" class="btn btn-primary btn-xl">Sign Up</button>
     </form>

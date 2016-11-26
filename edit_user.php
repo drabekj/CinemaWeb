@@ -15,7 +15,7 @@ function printEditForm($name) {
 		<hr noshade>
 		<div id="data">
 			<h3>Your username: <span class="datas"><?php echo ($_SESSION['username']); ?></span></h3>
-			<h3>Your fullname: <span class="datas"><?php echo ($_SESSION['fullname']); ?></span></h3>
+			<h3>Your fullname: <span class="datas"<?php echo ($_SESSION['fullname']); ?></span></h3>
 		</div>
 		<hr noshade>
 	</div>
