@@ -46,7 +46,7 @@
                         <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand page-scroll" href="index.php">
-                        <img id="nav_logo" src="/icon/logo_icon_small.png" />
+                        <img id="nav_logo" src="icon/logo_icon_small.png" />
                         ABC Cinema
                     </a>
                 </div>

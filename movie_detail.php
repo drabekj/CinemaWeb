@@ -15,7 +15,7 @@
     $category =    $row['category'];
     $description = $row['description'];
 
-    $db->close();
+
  ?>
 
 <html>
@@ -36,7 +36,7 @@
                         <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand page-scroll" href="index.php">
-                        <img id="nav_logo" src="/icon/logo_icon_small.png" />
+                        <img id="nav_logo" src="icon/logo_icon_small.png" />
                         ABC Cinema
                     </a>
                 </div>
@@ -82,9 +82,7 @@
                     <ul>
                     <?php
                         // screeing data
-                        $select_query = "SELECT * FROM Movie
-                                        INNER JOIN Screening ON Movie.id=Screening.movie_id
-                                        WHERE Movie.id=$id";
+                        $select_query = "SELECT * FROM Movie INNER JOIN Screening ON Movie.id=Screening.movie_id WHERE Movie.id=$id";
                         unset($result);
                         $result = array();
                         $result = $db->query($select_query);
