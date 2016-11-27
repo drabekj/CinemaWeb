@@ -1,99 +1,13 @@
 <!DOCTYPE html>
 <?php session_start(); ?>
 <html>
-<style>
-form {
-    border: 3px solid #f1f1f1;
-}
-
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-}
-
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}
-
-.container {
-    padding: 16px;
-}
-
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
-}
-.capbox {
-	background-color: #92D433;
-	border: #B3E272 0px solid;
-	border-width: 0px 12px 0px 0px;
-	display: inline-block;
-	*display: inline; zoom: 1; /* FOR IE7-8 */
-	padding: 8px 40px 8px 8px;
-	}
-
-.capbox-inner {
-	font: bold 11px arial, sans-serif;
-	color: #000000;
-	background-color: #DBF3BA;
-	margin: 5px auto 0px auto;
-	padding: 3px;
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	}
-
-#CaptchaDiv {
-	font: bold 17px verdana, arial, sans-serif;
-	font-style: italic;
-	color: #000000;
-	background-color: #FFFFFF;
-	padding: 4px;
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	}
-
-#CaptchaInput { margin: 1px 0px 1px 0px; width: 135px; }
-
-</style>
+<head>
+    <title>Login</title>
+    <link href="css/login.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
+    <link href="css/registration.css" rel="stylesheet">
+</head>
+<body>
 <?php
 function printLoginForm() {
 ?>
@@ -119,7 +33,7 @@ Type the above number:<br>
 </div>
 <br><br>
 <!-- END CAPTCHA -->
-  <button type="submit">Login</button>
+  <button type="submit" class="btn btn-primary btn-xl">Login</button>
 </div>
 </form>
 <script type="text/javascript">
@@ -209,3 +123,5 @@ if ($result->num_rows > 0) {
 }
 $db->close();
 ?>
+</body>
+</html>
