@@ -40,6 +40,7 @@
                 </div>
             </div>
         </div>
+        <hr style="width: 70%;">
         <div class="panel-body">
             <form role="form" id="payment-form">
                 <div class="row">
