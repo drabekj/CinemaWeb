@@ -42,3 +42,17 @@ body { margin-top:20px; }
 .credit-card-box .panel-heading img {
    min-width: 180px;
 }
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    text-decoration: none;
+    cursor: auto;
+}
+
+input {
+    width: 60% !important;
+}
+
+#first_pay_group {
+    margin-top: 1em;
+}

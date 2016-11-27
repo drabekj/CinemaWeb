@@ -9,8 +9,11 @@
 <html>
 <head>
     <title>Payment</title>
-    <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="css/creative.css" rel="stylesheet">
+    <link href="css/registration.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/card.css">
+
     <script type="text/javascript" src="scripts/card.js"></script>
     <script src='scripts/updateDB.js' type='text/javascript'></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
@@ -41,7 +44,7 @@
             <form role="form" id="payment-form">
                 <div class="row">
                     <div class="col-xs-12">
-                        <div class="form-group">
+                        <div id="first_pay_group" class="form-group">
                             <label for="cardNumber">CARD NUMBER</label>
                             <div class="input-group">
                                 <input
@@ -53,7 +56,6 @@
                                     pattern=".{3,}"
                                     required autofocus
                                 />
-                                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
                             </div>
                         </div>
                     </div>
@@ -88,7 +90,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-<a href="finish.html"><button type="button" onclick='saveSeats(<?php echo json_encode($_SESSION); ?>)'>
+<a href="finish.html"><button type="button" class="btn btn-primary btn-xl" onclick='saveSeats(<?php echo json_encode($_SESSION); ?>)'>
 Finish Payment        </button></a>
 
                  </div>
