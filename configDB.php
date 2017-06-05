@@ -1,8 +1,8 @@
 <?php
-    $server = "mysql.comp.polyu.edu.hk";
-    $user = "16019015x";
-    $DBpassword = "xwpksecu";
-    $database="16019015x"; //sameasaccount
+    $server = "";
+    $user = "";
+    $DBpassword = "";
+    $database=""; //sameasaccount
 
     $db = new mysqli($server, $user, $DBpassword, $database);
     if($db->connect_errno > 0) {
