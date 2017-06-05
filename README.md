@@ -30,3 +30,6 @@ CAREFUL: you can further specify the box version to ensure that indeed the box i
 ## Description
 This project should demonstrate the acquired bacis knowledge during the COMP2121 course, regarding HTML, CSS, PHP and MySQL.
 The app is not finished and a lot of core functionality is missing.
+
+### Needs to be fixed
+Database is not set up, to get a fully working version it needs to get set up. Fill the connection information into the configDB.php file.
