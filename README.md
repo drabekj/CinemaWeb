@@ -1,5 +1,6 @@
 # CinemaWeb
 Semester project for the CS course E-Business_COMP2121 class (Hong Kong Polytechnic University)
+Unfortunately the web is no longer live, because I no longer have access to my PolyU school account in HongKong.
 
 ## Dependencies
 You need Vagrant installed (requires VirtualBox).
